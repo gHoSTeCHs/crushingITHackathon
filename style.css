@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--bg-dark: #1c181d;
+	--bg-search-D-border: #616161;
+	--bg-search-bg: #303030;
+}
+
+.container {
+	padding: 0 1rem;
+}
+
+/* --> NAVBAR STARTS <-- */
+.navbar {
+	background-color: var(--bg-dark);
+}
+
+.navLinks {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 12px 0;
+}
+
+#search {
+	background-color: var(--bg-search-bg);
+	border: 1px solid var(--bg-search-D-border);
+	max-width: 480px;
+	width: 480px;
+	padding: 8px;
+	border-radius: 8px;
+}
+
+.notification,
+.userProfile {
+	background-color: var(--bg-search-bg);
+	display: flex;
+	border-radius: 8px;
+}
+
+.notification {
+	justify-content: center;
+	align-items: center;
+	width: 32px;
+	height: 32px;
+}
+
+/* --> NAVBAR HOVER ELEMENTS STARTS <-- */
+
+/* --> NAVBAR HOVER ELEMENTS ENDS <-- */
+
+/* --> NAVBAR ENDS <-- */
