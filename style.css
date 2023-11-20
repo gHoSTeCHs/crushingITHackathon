@@ -8,12 +8,26 @@
 
 :root {
 	--bg-dark: #1c181d;
+	--bg-2: #f1f1f1;
 	--bg-search-D-border: #616161;
 	--bg-search-bg: #303030;
+	--txt-wht: white;
+	--name-bg: #36fba1;
+	--name-txt: rgba(0, 0, 0, 0.4);
+	--alert-brd: #dbdbdb;
+	--cl2-txt: #616161;
 }
 
 .container {
 	padding: 0 1rem;
+}
+
+body {
+	font-family: 'Inter', sans-serif;
+}
+
+a {
+	color: inherit;
 }
 
 /* --> NAVBAR STARTS <-- */
@@ -28,28 +42,100 @@
 	padding: 12px 0;
 }
 
+.search {
+	max-width: 480px;
+}
+
 #search {
 	background-color: var(--bg-search-bg);
 	border: 1px solid var(--bg-search-D-border);
-	max-width: 480px;
-	width: 480px;
+	width: 100%;
 	padding: 8px;
 	border-radius: 8px;
+}
+
+.profile {
+	display: flex;
+	font-weight: 400;
+	font-size: 12px;
+	gap: 10px;
+	cursor: pointer;
 }
 
 .notification,
 .userProfile {
 	background-color: var(--bg-search-bg);
 	display: flex;
+	justify-content: center;
+	align-items: center;
 	border-radius: 8px;
+	border: none;
 }
 
 .notification {
-	justify-content: center;
-	align-items: center;
 	width: 32px;
 	height: 32px;
 }
+
+.userProfile {
+	color: var(--txt-wht);
+	height: 32px;
+	padding: 2px 0;
+	padding-left: 8px;
+	padding-right: 2px;
+}
+
+.name {
+	display: flex;
+	align-items: center;
+	background-color: var(--name-bg);
+	color: var(--name-txt);
+	height: 100%;
+	padding: 10px 5px;
+	border-radius: 6px;
+	margin-left: 8px;
+}
+
+/* --> DROP-MENUS STARTS <-- */
+.alertSection {
+	position: relative;
+}
+
+.alerts {
+	/* display: none; */
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	border: 1px solid var(--alert-brd);
+	width: 383px;
+	padding: 16px;
+	border-radius: 14px;
+	right: 1rem;
+	top: 0.5rem;
+}
+
+.alertHead,
+.alertIcons {
+	display: flex;
+	justify-content: space-between;
+	font-size: 14px;
+	color: var(--bg-search-bg);
+}
+
+.alertIcons {
+	gap: 1rem;
+}
+
+.alertBody {
+	background-color: var(--bg-2);
+	color: var(--cl2-txt);
+	font-size: 13px;
+	text-align: center;
+	padding: 16px 0;
+}
+
+/* --> DROP-MENUS  ENDS <-- */
 
 /* --> NAVBAR HOVER ELEMENTS STARTS <-- */
 
