@@ -16,18 +16,42 @@
 	--name-txt: rgba(0, 0, 0, 0.4);
 	--alert-brd: #dbdbdb;
 	--cl2-txt: #616161;
+	--profile-focus: #656266;
+	--popup-bg: #1a1a1a;
+	--txt-2: #e3e3e3;
+	--btn-txt: #323232;
 }
 
 .container {
 	padding: 0 1rem;
 }
 
+.contentContainer,
+.settingsContainer {
+	margin: 0 auto;
+	max-width: 800px;
+}
+
 body {
 	font-family: 'Inter', sans-serif;
 }
 
+button {
+	font-family: 'Inter';
+	background-color: inherit;
+	border: none;
+}
+
 a {
 	color: inherit;
+}
+
+li {
+	list-style: none;
+}
+
+h3 {
+	font-weight: inherit;
 }
 
 /* --> NAVBAR STARTS <-- */
@@ -66,6 +90,7 @@ a {
 .userProfile {
 	background-color: var(--bg-search-bg);
 	display: flex;
+	font-size: 12px;
 	justify-content: center;
 	align-items: center;
 	border-radius: 8px;
@@ -85,7 +110,8 @@ a {
 	padding-right: 2px;
 }
 
-.name {
+.name,
+.userInitials {
 	display: flex;
 	align-items: center;
 	background-color: var(--name-bg);
@@ -93,8 +119,26 @@ a {
 	height: 100%;
 	padding: 10px 5px;
 	border-radius: 6px;
+}
+
+.name {
 	margin-left: 8px;
 }
+
+/* --> NAVBAR HOVER AND FOCUS STATES STARTS <-- */
+
+.notification:focus,
+.userProfile:focus {
+	background-color: var(--profile-focus);
+	outline: none;
+}
+.notification:hover,
+.userProfile:hover {
+	background-color: var(--profile-focus);
+	outline: none;
+}
+
+/* --> NAVBAR HOVER AND FOCUS STATES ENDS <-- */
 
 /* --> DROP-MENUS STARTS <-- */
 .alertSection {
@@ -102,9 +146,9 @@ a {
 }
 
 .alerts {
-	/* display: none; */
+	display: none;
 	position: absolute;
-	display: flex;
+	/* display: flex; */
 	flex-direction: column;
 	gap: 16px;
 	border: 1px solid var(--alert-brd);
@@ -113,6 +157,15 @@ a {
 	border-radius: 14px;
 	right: 1rem;
 	top: 0.5rem;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+.storeDetails {
+	position: absolute;
+	right: 1rem;
+	top: 0.5rem;
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.05);
+	width: 320px;
 }
 
 .alertHead,
@@ -135,10 +188,143 @@ a {
 	padding: 16px 0;
 }
 
+/* --> SHOP-MENUS STARTS <-- */
+
+.userDetails,
+.storeHeader,
+.allStores {
+	display: flex;
+	align-items: center;
+	color: var(--bg-search-bg);
+	gap: 8px;
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 140%;
+}
+
+.allStores {
+	font-weight: 400;
+	font-size: 13px;
+	border-bottom: 1px solid var(--alert-brd);
+	padding: 6px 0;
+	margin-left: 6px;
+}
+
+.storeDetails {
+	display: none;
+	max-width: 320px;
+	border: 1px solid var(--alert-brd);
+	border-radius: 14px;
+	/* padding: 6px; */
+}
+
+.storeHeader {
+	background-color: var(--bg-2);
+	justify-content: space-between;
+	padding: 4px 8px 4px 12px;
+	border-radius: 8px;
+	margin: 6px;
+}
+
+.userInitials {
+	font-size: 10.5px;
+	width: 28px;
+	height: 28px;
+}
+
+.storeFunctions,
+.personalFunctions {
+	font-size: 14px;
+}
+
+.storeFunctions {
+	border-bottom: 1px solid var(--alert-brd);
+}
+
+.userName {
+	display: flex;
+	flex-direction: column;
+}
+
+li {
+	padding: 6px;
+	margin-left: 6px;
+}
+
+.email {
+	font-size: 12px;
+	font-weight: 400;
+	color: var(--bg-search-D-border);
+}
+/* --> SHOP-MENUS  ENDS <-- */
 /* --> DROP-MENUS  ENDS <-- */
 
-/* --> NAVBAR HOVER ELEMENTS STARTS <-- */
-
-/* --> NAVBAR HOVER ELEMENTS ENDS <-- */
-
 /* --> NAVBAR ENDS <-- */
+
+.plans {
+	display: flex;
+	font-size: 13px;
+	color: var(--txt-2);
+	flex-wrap: wrap;
+	padding: 12px 16px;
+	border-radius: 8px;
+	background-color: var(--popup-bg);
+	align-items: center;
+	justify-content: space-between;
+}
+
+.plans button {
+	font-size: 12px;
+	border: none;
+	outline: none;
+}
+
+.planBtns {
+	display: flex;
+	gap: 8px;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.selectPlanBtn {
+	background: white;
+	color: var(--btn-txt);
+	padding: 6px 12px;
+	border-radius: 6px;
+	font-size: 12px;
+	font-weight: 600;
+	line-height: 130%;
+}
+
+.close {
+	padding: 6px;
+}
+
+.settings {
+	border-radius: 18px;
+	border: 1px solid var(--stroke-s-50, #dbdbdb);
+	background: var(--White, #fff);
+	box-shadow: 0px 1px 0px 0px rgba(0, 0, 0, 0.05);
+	padding: 16px;
+}
+
+/* .storeGuide {
+	
+} */
+
+/* --> PROGRESSBAR  STARTS <-- */
+.progress-container {
+	width: 72px;
+	height: 4px;
+	background-color: #e3e3e3;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+#myProgressBar {
+	width: 30%;
+	height: 100%;
+	background-color: var(--popup-bg);
+	transition: width 0.3s ease-in-out;
+}
+/* --> PROGRESSBAR  ENDS <-- */
